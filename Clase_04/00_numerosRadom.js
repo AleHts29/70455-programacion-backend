@@ -78,18 +78,3 @@ const main = async () => {
 
 
 main();
-
-
-
-
-
-const user = {
-    name: "John Doe",
-    age: 30,
-    password: "qwerty123",
-    address: {
-        street: "123 Main St",
-        city: "New York",
-        country: "USA"
-    }
-}

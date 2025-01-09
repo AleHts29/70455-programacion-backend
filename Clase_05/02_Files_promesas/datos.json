@@ -1,0 +1,27 @@
+{
+  "name": "John Doe",
+  "age": 30,
+  "email": "john.doe@example.com",
+  "date": "2025-01-08",
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  },
+  "hobbies": [
+    "reading",
+    "painting",
+    "cooking"
+  ],
+  "friends": [
+    {
+      "name": "Jane Smith",
+      "age": 28
+    },
+    {
+      "name": "Alice Johnson",
+      "age": 32
+    }
+  ]
+}
