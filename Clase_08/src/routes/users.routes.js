@@ -1,34 +1,19 @@
-import express from 'express';
+import { Router } from 'express';
 
-const app = express();
-
-
-// prepara la confiuguracion del servidor para trabajar con archivos JSON y urlencode
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const router = new Router();
 
 
-const PORT = 9090;
-
-app.get('/ping', (req, res) => {
-    res.send("pong")
-})
-
-
-// Endpoints de USUARIOS
 
 // data en memoria --> simulando una DB
 const users = []
-
-
 // Obtener todos los usuarios - LISTAR
-app.get('/api/users', (req, res) => {
+router.get('/', (req, res) => {
     res.send(users)
 })
 
 
 // Crear un nuevo usuario
-app.post('/api/users', (req, res) => {
+router.post('/', (req, res) => {
     // console.log(req.body);
     let user = req.body
 
@@ -48,12 +33,12 @@ app.post('/api/users', (req, res) => {
     // agregamos el user al array
     users.push(user)
 
-    res.send(user)
+    res.send({ status: 'success', message: `Usuario agregado con exitos - IdUser:${user.id}` })
 })
 
 
 // ACTUALIZAR
-app.put('/api/users/:userId', (req, res) => {
+router.put('/:userId', (req, res) => {
     let userId = parseInt(req.params.userId)
     let userUpdate = req.body
 
@@ -73,7 +58,7 @@ app.put('/api/users/:userId', (req, res) => {
 
 
 // DELETE
-app.delete('/api/users/:userId', (req, res) => {
+router.delete('/:userId', (req, res) => {
     let userId = parseInt(req.params.userId)
 
 
@@ -90,11 +75,4 @@ app.delete('/api/users/:userId', (req, res) => {
     res.send("Usuario eliminado")
 })
 
-
-
-
-
-// la escucha del puerto de comunicacion
-app.listen(PORT, () => {
-    console.log(`Servidor escuchando en el puerto ${PORT}`)
-});
+export default router;
