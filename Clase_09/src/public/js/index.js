@@ -1,0 +1,1 @@
+alert("Usando .js desde una planilla de HBs")

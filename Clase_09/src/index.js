@@ -2,6 +2,11 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import usersRouter from './routes/users.routes.js'
 import petsRouter from './routes/pets.routes.js'
+import viewRouter from './routes/views.router.js'
+
+
+
+
 import __dirname from './utils.js';
 
 // console.log(__dirname);
@@ -23,6 +28,46 @@ app.set('view engine', 'handlebars');
 app.set("views", __dirname + '/views')
 
 
+
+const users = [
+    {
+        name: "Mauricio",
+        last_name: "Espinosa",
+        age: 26,
+        phone: "5541231355",
+        email: "correomau@correo.com"
+    },
+    {
+        name: "Marisol",
+        last_name: "Cadena",
+        age: 23,
+        phone: "15431231355",
+        email: "correomary@correo.com"
+    },
+    {
+        name: "Jorge",
+        last_name: "Velez",
+        age: 28,
+        phone: "4331234155",
+        email: "correojorge@correo.com"
+    },
+    {
+        name: "Uriel",
+        last_name: "Dueñas",
+        age: 18,
+        phone: "1233315451",
+        email: "correouriel@correo.com"
+    },
+    {
+        name: "Verónica",
+        last_name: "Duarte",
+        age: 45,
+        phone: "66521233",
+        email: "correoVero@correo.com"
+    }
+];
+
+
 app.get('/hbs', (req, res) => {
     const user = {
         nombre: "Maria",
@@ -31,6 +76,13 @@ app.get('/hbs', (req, res) => {
     }
 
     res.render('index', user)
+
+})
+
+app.get('/hbs_02', (req, res) => {
+    const numUser = Math.floor(Math.random() * users.length)
+
+    res.render('user', { user: users[numUser] })
 
 })
 
@@ -70,6 +122,9 @@ app.get('/ruta2', middleware1, middleware2, (req, res) => {
 // Definimos el routers
 app.use('/api/user', usersRouter)
 app.use('/api/pet', petsRouter)
+
+// Router solo para vistas
+app.use('/view', viewRouter)
 
 
 

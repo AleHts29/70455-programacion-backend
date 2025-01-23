@@ -1,0 +1,26 @@
+<h1>Food CoderHouse</h1>
+
+
+<div>
+    <h2>Hola! {{user.name}}</h2>
+
+
+    {{!-- Condicion --}}
+    {{!-- si user es admin --> rendirazamos lista comidas --}}
+    {{#if isAdmin}}
+    {{#each food}}
+    <div>
+        <h3>Nombre: {{this.name}}</h3>
+        <p>Price: {{this.price}}</p>
+    </div>
+    {{/each}}
+
+
+    {{!-- si user NO es admin --> rendirazamos: No tenes permisos --}}
+    {{else}}
+    <p>No tenes permisos para ver la lista de comidas</p>
+    {{/if}}
+
+</div>
+
+<script src="/js/index.js"></script>
