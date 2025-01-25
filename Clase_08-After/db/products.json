@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Pantalon Deportiva",
+    "description": "Pantalon hecho con material transpirable.",
+    "code": "PAMIS01",
+    "price": 49.99,
+    "stock": 50,
+    "category": "Ropa Deportiva",
+    "thumbnails": [
+      "https://example.com/images/pantalon1.jpg",
+      "https://example.com/images/pantalon2.jpg"
+    ],
+    "status": true
+  },
+  {
+    "id": 4,
+    "title": "Pantalon Deportiva",
+    "description": "Pantalon hecho con material transpirable.",
+    "code": "PAMIS01",
+    "price": 49.99,
+    "stock": 200,
+    "category": "Ropa Deportiva",
+    "thumbnails": [
+      "https://example.com/images/pantalon1.jpg",
+      "https://example.com/images/pantalon2.jpg",
+      "https://example.com/images/pantalon3.jpg",
+      "https://example.com/images/pantalon4.jpg"
+    ],
+    "status": true
+  }
+]
