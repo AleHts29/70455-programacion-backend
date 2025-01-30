@@ -1,0 +1,23 @@
+<div>
+    <h1>Bienvenido al chat de la camada: 70455!...</h1>
+    <h2>Nombre: <span id="myName"></span></h2>
+
+
+
+    {{!-- Input del mensaje --}}
+    <div>
+        <p>Escribir un mensaje en nuestro chatBox: <input id="chatBox" type="text"> </p>
+        <button id="closeChatBox">Close ChatBox</button>
+    </div>
+
+    {{!-- renderizado de los mensajes --}}
+    <h4>Renderizado de mensajes</h4>
+    <div>
+        <p id="messageLogs"></p>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/messages.js"></script>
