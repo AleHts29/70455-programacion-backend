@@ -58,6 +58,9 @@ socketServer.on('connection', socket => {
     socket.on('message', data => {
         messages.push(data)
 
+
+        // Se guarda la info de producto usando la classe ProductManager.create(data)
+        // conat productcts = ProductManager.getAll()
         // enviamos un array de objetos a todos los clientes 
         // ---> [{ user: "Juan", message: "Hola" }, { user: "Elias", message: "Como estas?" }]
 

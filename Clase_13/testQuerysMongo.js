@@ -116,5 +116,18 @@ colegio > db.estudiantes.find({}, { nombre: 1, correo: 1, edad: 1, _id: 0 }).sor
 -3
 -4
 
-
 */
+
+
+db.estudiantes.find().skip(2)
+
+
+colegio > db.estudiantes.find().limit(3)
+
+
+// Actualizar el documento con las opciones especificadas
+db.estudiantes.updateOne({ _id: ObjectId('67a4021b93988d5a63cf9461') }, { $set: { edad: 30 } })
+
+
+// Eliminar 
+db.estudiantes.deleteOne({ _id: ObjectId('67a4021b93988d5a63cf9462') })
